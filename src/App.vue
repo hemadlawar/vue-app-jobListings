@@ -1,16 +1,10 @@
 <script setup>
 import NavBar from "@/components/NavBar.vue";
-import Hero from "@/components/Hero.vue";
-import HomeCard from "@/components/HomeCard.vue";
-import JobLists from "@/components/jobLists.vue";
+import { RouterView } from "vue-router";
 </script>
-
 <template>
   <NavBar />
-  <Hero titlee="bzheepartee" />
-
-  <HomeCard />
-  <JobLists />
+  <RouterView />
 </template>
 
-<style scoped></style>
+<style></style>
