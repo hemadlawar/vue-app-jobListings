@@ -2,7 +2,10 @@
 import { defineProps } from "vue";
 
 const props = defineProps({
-  titlee: String,
+  titlee: {
+    type: String,
+    default: "ADD THE DEFAULT VALUE TO THE TITLE PROP OF HERO COMPONENT",
+  },
 });
 </script>
 
