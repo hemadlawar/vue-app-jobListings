@@ -21,14 +21,14 @@ import { RouterLink } from "vue-router";
           <div class="md:ml-auto">
             <div class="flex space-x-2">
               <RouterLink
-                to="/allJobs"
-                class="text-white bg-green-900 hover:bg-gray-900 hover:text-white rounded-md px-3 py-2"
+                to="/"
+                class="text-white bg-green-900 hover:bg-green-900 hover:text-white rounded-md px-3 py-2"
                 >Home</RouterLink
               >
-              <a
-                href="jobs.html"
+              <RouterLink
+                to="/allJobs"
                 class="text-white hover:bg-green-900 hover:text-white rounded-md px-3 py-2"
-                >Jobs</a
+                >Jobs</RouterLink
               >
               <a
                 href="add-job.html"

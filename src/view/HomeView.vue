@@ -4,7 +4,7 @@ import HomeCard from "@/components/HomeCard.vue";
 import JobLists from "@/components/jobLists.vue";
 </script>
 <template>
-  <Hero titlee="bzheepartee" />
+  <Hero titlee="job app" />
 
   <HomeCard />
   <jobLists :limit="3" />
