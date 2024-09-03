@@ -2,7 +2,13 @@
 import { defineProps } from "vue";
 import arrayOFjson from "@/assets/jobs copy.json";
 import JobList from "@/components/jobList.vue";
-defineProps({ limit: { type: Number, default: 100000000 } });
+defineProps({
+  limit: { type: Number, default: 100000000 },
+  showButton: {
+    type: Boolean,
+    default: false,
+  },
+});
 </script>
 <template>
   <section class="bg-green-50 px-4 py-10">
@@ -19,9 +25,9 @@ defineProps({ limit: { type: Number, default: 100000000 } });
       </div>
     </div>
   </section>
-  <section class="m-auto max-w-lg my-10 px-6">
+  <section v-if="showButton == 'true'" class="m-auto max-w-lg my-10 px-6">
     <a
-      href="jobs.html"
+      href="/jobs"
       class="block bg-green-500 text-white text-center py-4 px-6 rounded-xl hover:bg-green-700"
       >View All Jobs</a
     >

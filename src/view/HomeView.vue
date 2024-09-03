@@ -7,5 +7,5 @@ import JobLists from "@/components/jobLists.vue";
   <Hero titlee="job app" />
 
   <HomeCard />
-  <jobLists :limit="3" />
+  <jobLists :limit="3" showButton="true" />
 </template>
