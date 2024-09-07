@@ -23,17 +23,18 @@ import { RouterLink } from "vue-router";
               <RouterLink
                 to="/"
                 class="text-white bg-green-900 hover:bg-green-900 hover:text-white rounded-md px-3 py-2"
-                >Home</RouterLink
-              >
+                >Home
+              </RouterLink>
               <RouterLink
                 to="/allJobs"
                 class="text-white hover:bg-green-900 hover:text-white rounded-md px-3 py-2"
                 >Jobs</RouterLink
               >
-              <a
-                href="add-job.html"
+
+              <RouterLink
+                to="/job/add"
                 class="text-white hover:bg-green-900 hover:text-white rounded-md px-3 py-2"
-                >Add Job</a
+                >Add Job</RouterLink
               >
             </div>
           </div>
