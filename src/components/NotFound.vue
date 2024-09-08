@@ -1,6 +1,7 @@
 <script setup>
 import { onMounted } from "vue";
 import { gsap } from "gsap";
+import { RouterLink } from "vue-router";
 
 onMounted(() => {
   let t1 = gsap.timeline();
@@ -69,7 +70,17 @@ onMounted(() => {
       </div>
     </div>
     <h1 class="second-four">4</h1>
-    <p class="wrong-para">Uh Oh! Page not found!</p>
+
+    <p class="wrong-para">
+      Uh Oh! Page not found! <br />
+      <RouterLink to="/">
+        <button
+          class="bg-green-500 text-white pt-10 h-8 w-40 rounded-md hover:bg-green-800"
+        >
+          Back to Home!
+        </button>
+      </RouterLink>
+    </p>
   </div>
 </template>
 
