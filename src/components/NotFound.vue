@@ -1,39 +1,45 @@
 <script setup>
-let t1 = gsap.timeline();
-let t2 = gsap.timeline();
-let t3 = gsap.timeline();
+import { onMounted } from "vue";
+import { gsap } from "gsap";
 
-t1.to(".cog1", {
-  transformOrigin: "50% 50%",
-  rotation: "+=360",
-  repeat: -1,
-  ease: Linear.easeNone,
-  duration: 8,
-});
+onMounted(() => {
+  let t1 = gsap.timeline();
+  let t2 = gsap.timeline();
+  let t3 = gsap.timeline();
 
-t2.to(".cog2", {
-  transformOrigin: "50% 50%",
-  rotation: "-=360",
-  repeat: -1,
-  ease: Linear.easeNone,
-  duration: 8,
-});
+  t1.to(".cog1", {
+    transformOrigin: "50% 50%",
+    rotation: "+=360",
+    repeat: -1,
+    ease: "linear",
+    duration: 8,
+  });
 
-t3.fromTo(
-  ".wrong-para",
-  {
-    opacity: 0,
-  },
-  {
-    opacity: 1,
-    duration: 1,
-    stagger: {
-      repeat: -1,
-      yoyo: true,
+  t2.to(".cog2", {
+    transformOrigin: "50% 50%",
+    rotation: "-=360",
+    repeat: -1,
+    ease: "linear",
+    duration: 8,
+  });
+
+  t3.fromTo(
+    ".wrong-para",
+    {
+      opacity: 0,
     },
-  }
-);
+    {
+      opacity: 1,
+      duration: 1,
+      stagger: {
+        repeat: -1,
+        yoyo: true,
+      },
+    }
+  );
+});
 </script>
+
 <template>
   <div class="container">
     <h1 class="first-four">4</h1>
@@ -66,6 +72,7 @@ t3.fromTo(
     <p class="wrong-para">Uh Oh! Page not found!</p>
   </div>
 </template>
+
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap"rel="stylesheet");
 
