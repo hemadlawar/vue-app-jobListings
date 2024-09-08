@@ -42,7 +42,7 @@ const isActiveLink = (routePath) => {
               <RouterLink
                 to="/allJobs"
                 :class="[
-                  'text-white py-2',
+                  'text-white py-2 rounded-md px-3 hover:bg-green-900',
                   isActiveLink('/allJobs')
                     ? 'bg-green-900 hover:bg-green-900 hover:text-white rounded-md px-3 py-2 '
                     : '',
@@ -53,7 +53,7 @@ const isActiveLink = (routePath) => {
               <RouterLink
                 to="/job/add"
                 :class="[
-                  'text-white py-2',
+                  'text-white py-2 hover:bg-green-900 rounded-md',
                   isActiveLink('/job/add')
                     ? 'bg-green-900 hover:bg-green-900 hover:text-white rounded-md px-3 py-2 '
                     : '',

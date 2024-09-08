@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "@/view/HomeView.vue";
 import Alljobsview from "@/view/Alljobsview.vue";
 import addJobView from "@/view/addJobView.vue";
+import NotFoundView from "@/view/NotFoundView.vue";
 const router = createRouter({
   history: createWebHistory(import.meta.env.Base_URL),
   routes: [
@@ -19,6 +20,11 @@ const router = createRouter({
       path: "/job/add",
       name: "addjob",
       component: addJobView,
+    },
+    {
+      path: "/:catchAll(.*)",
+      name: "NotFound",
+      component: NotFoundView,
     },
   ],
 });
