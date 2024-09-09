@@ -1,6 +1,6 @@
 <script setup>
 import { defineProps, ref, computed } from "vue";
-
+import { RouterLink } from "vue-router";
 const props = defineProps({
   job: Object,
 });
@@ -22,7 +22,7 @@ const toggleDescription = () => {
   isDescriptionTruncated.value = !isDescriptionTruncated.value;
 };
 
-console.log(props);
+console.log(props.job);
 </script>
 
 <template>
@@ -53,12 +53,12 @@ console.log(props);
           <i class="fa-solid fa-location-dot text-lg"></i>
           {{ props.job.location }}
         </div>
-        <a
-          href="job.html"
+        <RouterLink
+          :to="`/jobs/${props.job.id}`"
           class="h-[36px] bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg text-center text-sm"
         >
           Read More
-        </a>
+        </RouterLink>
       </div>
     </div>
   </div>
