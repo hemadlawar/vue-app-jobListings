@@ -5,6 +5,7 @@ import arrayOFjson from "@/assets/jobs copy.json";
 import JobList from "@/components/jobList.vue";
 import { RouterLink } from "vue-router";
 import axios from "axios";
+import PulseLoader from "vue-spinner/src/PulseLoader.vue";
 defineProps({
   limit: { type: Number, default: 100000000 },
   showButton: {
@@ -46,8 +47,8 @@ onMounted(async () => {
           :job="job"
         />
       </div>
-      <div v-else>
-        <p>wait ....</p>
+      <div v-else class="text-center">
+        <PulseLoader />
       </div>
     </div>
   </section>
