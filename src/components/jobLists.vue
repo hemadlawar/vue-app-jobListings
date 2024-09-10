@@ -13,7 +13,7 @@ defineProps({
   },
 });
 
-const jobs_From_Json = ref({
+var jobs_From_Json = ref({
   jobs: [],
   isLoading: true,
 });
@@ -29,9 +29,6 @@ onMounted(async () => {
     jobs_From_Json.value.isLoading = false;
   }
 });
-//console.log(jobs_From_Json.value.jobs);
-
-const jobs = ref(arrayOFjson);
 </script>
 <template>
   <section class="bg-green-50 px-4 py-10">
@@ -39,15 +36,22 @@ const jobs = ref(arrayOFjson);
       <h2 class="text-3xl font-bold text-green-500 mb-6 text-center">
         Job Browser
       </h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div
+        v-if="jobs_From_Json.isLoading == false"
+        class="grid grid-cols-1 md:grid-cols-3 gap-6"
+      >
         <JobList
-          v-for="job in arrayOFjson.slice(0, limit)"
+          v-for="job in jobs_From_Json.jobs.slice(0, limit)"
           :Key="job.key"
           :job="job"
         />
       </div>
+      <div v-else>
+        <p>wait ....</p>
+      </div>
     </div>
   </section>
+
   <section v-if="showButton == 'true'" class="m-auto max-w-lg my-10 px-6">
     <RouterLink
       to="/allJobs"
