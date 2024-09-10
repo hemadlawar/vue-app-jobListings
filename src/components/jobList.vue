@@ -21,8 +21,6 @@ const displayedDescription = computed(() => {
 const toggleDescription = () => {
   isDescriptionTruncated.value = !isDescriptionTruncated.value;
 };
-
-console.log(props.job);
 </script>
 
 <template>

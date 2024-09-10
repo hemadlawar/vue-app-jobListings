@@ -1,9 +1,10 @@
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import { defineProps } from "vue";
 import arrayOFjson from "@/assets/jobs copy.json";
 import JobList from "@/components/jobList.vue";
 import { RouterLink } from "vue-router";
+import axios from "axios";
 defineProps({
   limit: { type: Number, default: 100000000 },
   showButton: {
@@ -12,8 +13,25 @@ defineProps({
   },
 });
 
+const jobs_From_Json = ref({
+  jobs: [],
+  isLoading: true,
+});
+onMounted(async () => {
+  try {
+    //async
+    const response = await axios.get(`http://localhost:3030/jobs`);
+    jobs_From_Json.value.jobs = response.data;
+    console.log(jobs_From_Json.value.jobs);
+  } catch (err) {
+    console.log("there is an erro happen" + err);
+  } finally {
+    jobs_From_Json.value.isLoading = false;
+  }
+});
+//console.log(jobs_From_Json.value.jobs);
+
 const jobs = ref(arrayOFjson);
-console.log(jobs);
 </script>
 <template>
   <section class="bg-green-50 px-4 py-10">
