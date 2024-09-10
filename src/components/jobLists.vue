@@ -1,4 +1,5 @@
 <script setup>
+import { ref } from "vue";
 import { defineProps } from "vue";
 import arrayOFjson from "@/assets/jobs copy.json";
 import JobList from "@/components/jobList.vue";
@@ -10,6 +11,9 @@ defineProps({
     default: false,
   },
 });
+
+const jobs = ref(arrayOFjson);
+console.log(jobs);
 </script>
 <template>
   <section class="bg-green-50 px-4 py-10">
