@@ -1,6 +1,8 @@
-<script setup></script>
+<script setup>
+import AddJob from "@/components/AddJob.vue";
+</script>
 <template>
-  <h3>this is add my job</h3>
+  <AddJob />
 </template>
 
 <style scoped></style>
