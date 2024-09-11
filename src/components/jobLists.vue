@@ -1,7 +1,7 @@
 <script setup>
 import { ref, onMounted } from "vue";
 import { defineProps } from "vue";
-import arrayOFjson from "@/assets/jobs copy.json";
+
 import JobList from "@/components/jobList.vue";
 import { RouterLink } from "vue-router";
 import axios from "axios";

@@ -5,7 +5,7 @@ const url_path = useRoute();
 
 /// is Active function
 const isActiveLink = (routePath) => {
-  console.log(url_path.fullPath); /// ama pathy urlaka dagarentawa ... pathy url aw pagay ka haman
+  /// ama pathy urlaka dagarentawa ... pathy url aw pagay ka haman
   return url_path.fullPath == routePath;
 };
 </script>
@@ -17,7 +17,7 @@ const isActiveLink = (routePath) => {
           class="flex flex-1 items-center justify-center md:items-stretch md:justify-start"
         >
           <!-- Logo -->
-          <RouterLink :class="['flex flex-shrink-0 items-center mr-4']">
+          <RouterLink to="/" :class="['flex flex-shrink-0 items-center mr-4']">
             <img class="h-10 w-auto" v-bind:src="logo" />
             <span class="hidden md:block text-white text-2xl font-bold ml-2"
               >Vue Jobs</span
