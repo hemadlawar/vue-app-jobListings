@@ -1,9 +1,10 @@
 <script setup>
+import axios from "axios";
 const job = {
-  type: "",
+  type: "Full-Time",
   name: "",
   description: "",
-  Salary: "",
+  Salary: "Under $50K",
   location: "",
   company: {
     name: "",
@@ -13,8 +14,15 @@ const job = {
   },
 };
 
-const handleSubmit = () => {
-  console.log(job);
+const handleSubmit = async () => {
+  try {
+    //async
+    const response = await axios.post(`http://localhost:3030/jobs`, job);
+
+    console.log("the data has been sent successfully", response);
+  } catch (err) {
+    console.log("there is an erro happen" + err);
+  }
 };
 </script>
 <template>
