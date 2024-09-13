@@ -3,7 +3,7 @@ import { useRoute } from "vue-router";
 import axios from "axios";
 import { ref, onMounted } from "vue";
 import PulseLoader from "vue-spinner/src/PulseLoader.vue";
-
+import router from "@/router";
 const routee = useRoute();
 console.log(routee.params.id);
 
@@ -13,6 +13,7 @@ var jobs_From_Json = ref({
   jobs: [],
   isLoading: true,
 });
+//////////////////////////////////////////////////////////////////////////////////////////fetch data
 onMounted(async () => {
   try {
     //async
@@ -25,6 +26,17 @@ onMounted(async () => {
     jobs_From_Json.value.isLoading = false;
   }
 });
+/////////////////////////////////////////////////////delete a specific job
+
+const deleteAjob = async () => {
+  try {
+    const response = await axios.delete(`http://localhost:3030/jobs/${jobId}`);
+    console.log(response);
+    router.push("/allJobs");
+  } catch (err) {
+    console.log(err);
+  }
+};
 </script>
 <template>
   <section class="bg-green-50">
@@ -100,6 +112,7 @@ onMounted(async () => {
             >
             <button
               class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block"
+              v-on:click="deleteAjob"
             >
               Delete Job
             </button>

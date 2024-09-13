@@ -2,7 +2,7 @@
 import axios from "axios";
 import ToastNotification from "./ToastNotification.vue";
 import { ref } from "vue";
-
+import router from "@/router";
 const job = {
   type: "Internship",
   name: "",
@@ -17,28 +17,34 @@ const job = {
   },
 };
 
+///////////////////////////////////////////////////////////////////////////// hide toast
+const showToast = ref(false);
+//////////////////////////////////////////////////////////////////////////////////submit the form
 const handleSubmit = async () => {
   try {
     //async
     const response = await axios.post(`http://localhost:3030/jobs`, job);
-
+    showToast.value = true;
     console.log("the data has been added successfully", response);
-    toast("the job added to system");
+
+    router.push("/");
   } catch (err) {
     console.log("there is an erro happen" + err);
   }
 };
-// Define reactive array of toast items
+
+////////////////////////////////////////////////////////////////////////////////// Define reactive array of toast items
 const items = ref([{ message: "The job has been added!" }]);
 
-// Remove the toast notification by index
+/////////////////////////////////////////////////////////////////////////////// Remove the toast notification by index
 function remove(index) {
-  items.value.splice(index, 1); // Fix here: splice is used to remove the item
+  items.value.splice(index, 1);
 }
 </script>
 <template>
   <!-- Toast notifications -->
   <ToastNotification
+    v-if="showToast == true"
     v-for="(item, index) in items"
     :key="index"
     :message="item.message"
