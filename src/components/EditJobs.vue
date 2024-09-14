@@ -3,6 +3,7 @@ import { ref, onMounted } from "vue";
 import axios from "axios";
 import { useRoute } from "vue-router";
 import PulseLoader from "vue-spinner/src/PulseLoader.vue";
+import router from "@/router";
 const routee = useRoute();
 
 const jobId = routee.params.id;
@@ -25,6 +26,20 @@ onMounted(async () => {
     jobs_From_Json.value.isLoading = false;
   }
 });
+//////////////////////////////////////////////////////////////////////////////////////// submit the form
+const handleSubmit = async () => {
+  console.log(jobs_From_Json.value.jobs);
+  try {
+    const request = await axios.put(
+      `http://localhost:3030/jobs/${jobId}`,
+      jobs_From_Json.value.jobs
+    );
+    console.log(request);
+    router.push(`/jobs/${jobId}`);
+  } catch (err) {
+    console.log(err);
+  }
+};
 </script>
 <template>
   <div class="container m-auto max-w-2xl py-24">
@@ -126,6 +141,7 @@ onMounted(async () => {
             >Company Name</label
           >
           <input
+            v-model="jobs_From_Json.jobs.company.name"
             type="text"
             id="company"
             name="company"
@@ -141,6 +157,7 @@ onMounted(async () => {
             >Company Description</label
           >
           <textarea
+            v-model="jobs_From_Json.jobs.company.description"
             id="company_description"
             name="company_description"
             class="border rounded w-full py-2 px-3"
@@ -154,6 +171,7 @@ onMounted(async () => {
             >Contact Email</label
           >
           <input
+            v-model="jobs_From_Json.jobs.company.contactEmail"
             type="email"
             id="contact_email"
             name="contact_email"
@@ -167,6 +185,7 @@ onMounted(async () => {
             >Contact Phone</label
           >
           <input
+            v-model="jobs_From_Json.jobs.company.contactPhone"
             type="tel"
             id="contact_phone"
             name="contact_phone"
