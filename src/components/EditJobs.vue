@@ -2,9 +2,8 @@
 import { ref, onMounted } from "vue";
 import axios from "axios";
 import { useRoute } from "vue-router";
-////
+import PulseLoader from "vue-spinner/src/PulseLoader.vue";
 const routee = useRoute();
-console.log(routee.params.id);
 
 const jobId = routee.params.id;
 
@@ -26,14 +25,13 @@ onMounted(async () => {
     jobs_From_Json.value.isLoading = false;
   }
 });
-
-const handleSubmit = () => {
-  console.log(jobs_From_Json.value.jobs);
-};
 </script>
 <template>
   <div class="container m-auto max-w-2xl py-24">
-    <div class="bg-white px-6 py-8 mb-4 shadow-md rounded-md border m-4 md:m-0">
+    <div
+      class="bg-white px-6 py-8 mb-4 shadow-md rounded-md border m-4 md:m-0"
+      v-if="jobs_From_Json.isLoading == false"
+    >
       <form v-on:submit.prevent="handleSubmit">
         <h2 class="text-3xl text-center font-semibold mb-6">Edit Job</h2>
 
@@ -128,7 +126,6 @@ const handleSubmit = () => {
             >Company Name</label
           >
           <input
-            v-model="jobs_From_Json.jobs.company.name"
             type="text"
             id="company"
             name="company"
@@ -144,7 +141,6 @@ const handleSubmit = () => {
             >Company Description</label
           >
           <textarea
-            v-model="jobs_From_Json.jobs.company.description"
             id="company_description"
             name="company_description"
             class="border rounded w-full py-2 px-3"
@@ -158,7 +154,6 @@ const handleSubmit = () => {
             >Contact Email</label
           >
           <input
-            v-model="jobs_From_Json.jobs.company.contactEmail"
             type="email"
             id="contact_email"
             name="contact_email"
@@ -172,7 +167,6 @@ const handleSubmit = () => {
             >Contact Phone</label
           >
           <input
-            v-model="jobs_From_Json.jobs.company.contactPhone"
             type="tel"
             id="contact_phone"
             name="contact_phone"
@@ -191,6 +185,7 @@ const handleSubmit = () => {
         </div>
       </form>
     </div>
+    <div v-else><PulseLoader /></div>
   </div>
 </template>
 <style scoped></style>

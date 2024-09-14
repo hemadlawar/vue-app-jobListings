@@ -5,7 +5,6 @@ import { ref, onMounted } from "vue";
 import PulseLoader from "vue-spinner/src/PulseLoader.vue";
 import router from "@/router";
 const routee = useRoute();
-console.log(routee.params.id);
 
 const jobId = routee.params.id; /// used to fetch id of specific job
 
@@ -118,7 +117,7 @@ const deleteAjob = async () => {
             </button>
           </div>
         </aside>
-        <aside v-else>PulseLoader</aside>
+        <aside v-else><PulseLoader /></aside>
       </div>
     </div>
   </section>
