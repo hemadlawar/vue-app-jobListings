@@ -21,6 +21,7 @@ const job = {
 const showToast = ref(false);
 //////////////////////////////////////////////////////////////////////////////////submit the form
 const handleSubmit = async () => {
+  console.log(job);
   try {
     //async
     const response = await axios.post(`http://localhost:3030/jobs`, job);

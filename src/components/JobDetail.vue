@@ -47,7 +47,7 @@ const deleteAjob = async () => {
           >
             <div class="text-gray-500 mb-4">{{ jobs_From_Json.jobs.type }}</div>
             <h1 class="text-3xl font-bold mb-4">
-              {{ jobs_From_Json.jobs.title }}
+              {{ jobs_From_Json.jobs.name }}
             </h1>
             <div
               class="text-gray-500 mb-4 flex align-middle justify-center md:justify-start"
@@ -70,7 +70,7 @@ const deleteAjob = async () => {
 
             <h3 class="text-green-800 text-lg font-bold mb-2">Salary</h3>
 
-            <p class="mb-4">{{ jobs_From_Json.jobs.salary }}</p>
+            <p class="mb-4">{{ jobs_From_Json.jobs.Salary }}</p>
           </div>
         </main>
 
@@ -91,13 +91,13 @@ const deleteAjob = async () => {
             <h3 class="text-xl">Contact Email:</h3>
 
             <p class="my-2 bg-green-100 p-2 font-bold">
-              {{ jobs_From_Json.jobs.company.contactEmail }}
+              {{ jobs_From_Json.jobs.company.email }}
             </p>
 
             <h3 class="text-xl">Contact Phone:</h3>
 
             <p class="my-2 bg-green-100 p-2 font-bold">
-              {{ jobs_From_Json.jobs.company.contactPhone }}
+              {{ jobs_From_Json.jobs.company.phone }}
             </p>
           </div>
 

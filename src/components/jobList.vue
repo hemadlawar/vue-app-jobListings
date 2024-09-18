@@ -6,7 +6,7 @@ const props = defineProps({
 });
 
 const isDescriptionTruncated = ref(true);
-
+console.log(props);
 // Computed property to truncate the job description
 const displayedDescription = computed(() => {
   const description = props.job.description;
@@ -28,7 +28,7 @@ const toggleDescription = () => {
     <div class="p-4">
       <div class="mb-6">
         <div class="text-gray-600 my-2">{{ props.job.type }}</div>
-        <h3 class="text-xl font-bold">{{ props.job.title }}</h3>
+        <h3 class="text-gray-600 text-xl font-bold">{{ props.job.name }}</h3>
       </div>
 
       <div class="mb-5">
@@ -42,7 +42,7 @@ const toggleDescription = () => {
         </button>
       </div>
 
-      <h3 class="text-green-500 mb-2">{{ props.job.salary }} / Year</h3>
+      <h3 class="text-green-500 mb-2">{{ props.job.Salary }} / Year</h3>
 
       <div class="border border-gray-100 mb-5"></div>
 

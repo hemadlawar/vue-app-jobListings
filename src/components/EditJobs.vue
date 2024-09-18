@@ -73,7 +73,7 @@ const handleSubmit = async () => {
             >Job Listing Name</label
           >
           <input
-            v-model="jobs_From_Json.jobs.title"
+            v-model="jobs_From_Json.jobs.name"
             type="text"
             id="name"
             name="name"
@@ -101,7 +101,7 @@ const handleSubmit = async () => {
             >Salary</label
           >
           <select
-            v-model="jobs_From_Json.jobs.salary"
+            v-model="jobs_From_Json.jobs.Salary"
             id="salary"
             name="salary"
             class="border rounded w-full py-2 px-3"
@@ -171,7 +171,7 @@ const handleSubmit = async () => {
             >Contact Email</label
           >
           <input
-            v-model="jobs_From_Json.jobs.company.contactEmail"
+            v-model="jobs_From_Json.jobs.company.email"
             type="email"
             id="contact_email"
             name="contact_email"
@@ -185,7 +185,7 @@ const handleSubmit = async () => {
             >Contact Phone</label
           >
           <input
-            v-model="jobs_From_Json.jobs.company.contactPhone"
+            v-model="jobs_From_Json.jobs.company.phone"
             type="tel"
             id="contact_phone"
             name="contact_phone"

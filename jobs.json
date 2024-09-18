@@ -1,31 +1,59 @@
 {
   "jobs": [
     {
-      "id": "3",
-      "title": "Vue.js Developer",
+      "id": "bc3f",
       "type": "Full-Time",
-      "description": "Are you passionate about front-end development? Join our team in vibrant Brooklyn, NY, and work on exciting projects that make a difference. We offer competitive compensation and a collaborative work environment where your ideas are valued.",
-      "location": "Brooklyn, NY",
-      "salary": "$70K - $80K",
+      "name": "Network Engineer",
+      "description": "we need a network engineer",
+      "Salary": "$100K - $125K",
+      "location": "Erbil-KRI",
       "company": {
-        "name": "Dolor Cloud",
-        "description": "Dolor Cloud is a leading technology company specializing in digital solutions for businesses of all sizes. With a focus on innovation and customer satisfaction, we are committed to delivering cutting-edge products and services.",
-        "contactEmail": "contact@dolorsitamet.com",
-        "contactPhone": "555-555-5555"
+        "name": "asiacell ",
+        "description": "asiacell is a telecommunication company",
+        "phone": "+9657701111111",
+        "email": "hr.@asiacell.com"
       }
     },
     {
-      "id": "4",
-      "title": "Vue Front-End Developer",
-      "type": "Full-Time",
-      "description": "Join our team as a Part-Time Front-End Developer in beautiful Pheonix, AZ. We are looking for a self-motivated individual with a passion for creating engaging user experiences. This position offers flexible hours and the opportunity to work remotely.",
-      "location": "Erbil ,KRI",
-      "salary": "$125K - $150K",
+      "id": "cfc5",
+      "type": "Internship",
+      "name": "full-stack developer",
+      "description": "we need a full stac developer",
+      "Salary": "$90K - $100K",
+      "location": "Erbil-KRI",
       "company": {
-        "name": "gateway",
-        "description": "Alpha Elite is a dynamic startup specializing in digital marketing and web development. We are committed to fostering a diverse and inclusive workplace where creativity and innovation thrive.",
-        "contactEmail": "contact@adipisicingelit.com",
-        "contactPhone": "555-555-9999"
+        "name": "software company",
+        "description": "software company is a company from erbil-kri",
+        "phone": "07701234567",
+        "email": "hr.@company.com"
+      }
+    },
+    {
+      "id": "1e67",
+      "type": "Internship",
+      "name": "Front-end developer",
+      "description": "we need a developer who can use frameworks such as : react, next js..",
+      "Salary": "$80K - $90K",
+      "location": "Erbil-KRI",
+      "company": {
+        "name": "software company",
+        "description": "the softwrae company founded in 2022",
+        "phone": "07701234567",
+        "email": "hr.@company.com"
+      }
+    },
+    {
+      "id": "cf22",
+      "type": "Part-Time",
+      "name": "Front-end developer",
+      "description": "we need a front-end developer",
+      "Salary": "$125K - $150K",
+      "location": "Erbil-KRI",
+      "company": {
+        "name": "software company",
+        "description": "software company founded in 2024",
+        "phone": "07701234567",
+        "email": "hr.@company.com"
       }
     }
   ]
